@@ -1,64 +1,37 @@
 # 🤖 ESP32-Based Autonomous Path-Memorizing Robot
 
-*A low-cost autonomous robot that learns routes once and replays them automatically for repetitive indoor delivery tasks.*
+> Control, record, and replay paths with your ESP32 robot using a sleek Python GUI and real-time IP webcam streaming. Perfect for robotics enthusiasts, IoT lovers, and automation projects!  
+
+[![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)](https://www.python.org/)  
+[![Arduino](https://img.shields.io/badge/Arduino-ESP32-green?logo=arduino&logoColor=white)](https://www.arduino.cc/)  
 
 ---
 
-## 📌 Project Overview
+## **Features**
 
-This project implements an **autonomous path-memorizing robot** using an **ESP32** microcontroller.  
-The robot can:
-
-1. **Record a path** during a manual “teaching run”
-2. **Store the path in NVS flash memory**
-3. **Replay the same route autonomously**
-4. **Avoid obstacles** using ultrasonic sensors
-5. **Correct drift** using wheel encoders
-
-Designed for **budget-friendly delivery automation** in hospitals, offices, labs, and warehouses.
+- Real-time video streaming from the robot’s camera using OpenCV and Tkinter.
+- Arrow key controls (`Up`, `Down`, `Left`, `Right`) for manual movement.
+- **Path recording**: Record a sequence of commands along with timestamps.
+- **Path replay**: Replay the recorded path autonomously.
+- **Reverse path**: After completion, the robot can retrace the path.
+- Obstacle detection using ultrasonic sensors (front-left, front-right, rear).
+- Capture images from the live camera feed.
+- Reset recorded paths easily.
 
 ---
 
-## 🎯 Key Features
+## **Hardware Requirements**
 
-### 🔹 Path Recording
-- Manual driving via Python/Tkinter GUI  
-- Logs: direction, speed, timestamp  
-- Saves path into **NVS flash memory**
-
-### 🔹 Autonomous Replay
-- Loads stored path from flash  
-- Executes movements using timestamp sequencing  
-- Can replay **forward or reverse**
-
-### 🔹 Obstacle Detection
-- HC-SR04 ultrasonic sensor  
-- Robot halts if an obstacle appears  
-- Automatically resumes
-
-### 🔹 Drift Correction
-- Wheel encoders count rotations  
-- Adjusts PWM in real time to maintain path accuracy
-
-### 🔹 Optional Add-On
-- Live video feed from ESP32  
-- Snapshot capture  
-- Record / Replay buttons in the GUI  
+- ESP32 Development Board
+- 2x DC motors + Motor Driver (L298N or similar)
+- Ultrasonic sensors (HC-SR04)
+- ESP32-CAM or IP webcam for video streaming
+- Jumper wires, power supply, and basic chassis
 
 ---
 
-## 🧱 Hardware Components
+## **Software Requirements**
 
-| Component | Purpose |
-|----------|---------|
-| **ESP32 Dev Board** | Main controller |
-| **DC Gear Motors** | Differential drive |
-| **Motor Encoders** | Drift correction |
-| **L298N Motor Driver** | PWM motor control |
-| **HC-SR04 Ultrasonic** | Obstacle detection |
-| **12V Lithium Battery** | Power source |
-| **Buck Converter (5V)** | ESP32 power regulation |
-| **Chassis** | Robot base |
-
----
-
+- **Arduino IDE** for ESP32 code
+- **Python 3.x**
+- Required Python libraries:
